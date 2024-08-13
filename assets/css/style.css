@@ -1,0 +1,44 @@
+/* html{
+    font-family: Roboto,sans-serif;
+    font-size: 62.5%;
+} */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: digital-7;
+    src: url(../fonts/digital-7.ttf);
+}
+
+body{
+    font-size: 1.8rem;
+    overflow-x: hidden;
+}
+
+.cronometro-numeros{
+    font-family: digital-7;
+    font-size: 6rem;
+}
+.rule{
+    width: 1px;
+    height: 80px;
+}
+.cronometro-container{
+    margin: 0 auto;
+    padding: 18px;
+    width: 40%;
+    min-width: 400px;
+    border: solid 2px #6c757d;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cronometro-numeros{
+    height: 150px;
+    color: #3a3a3a;
+    letter-spacing: 16px;
+}
