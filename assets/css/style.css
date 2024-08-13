@@ -37,6 +37,12 @@ body{
     text-align: center;
 }
 
+.display-cronometro{
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+}
+
 .cronometro-numeros{
     height: 150px;
     color: #3a3a3a;

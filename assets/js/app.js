@@ -4,6 +4,9 @@ let cronometroCall;
 let cronometroActivado = false;
 const iniciar = document.getElementById('iniciar')
 const frenar = document.getElementById('frenar')
+const displayMinutos = document.getElementById('displayMinutos')
+const displaySegundos = document.getElementById('displaySegundos')
+const displayMilisegundos = document.getElementById('displayMilisegundos')
 
 iniciar.addEventListener('click', () => {
     activarCronometro()
@@ -21,7 +24,7 @@ function cronometro(){
         milisegundos = "0" + milisegundos
     }
 
-    if (milisegundos > 59) {
+    if (milisegundos > 99) {
         milisegundos = "00"
         segundos++
 
@@ -40,12 +43,15 @@ function cronometro(){
             minutos = "0" + minutos
         }
     }
-    cronometroDisplay.textContent = `${minutos}:${segundos}:${milisegundos}`
+    //cronometroDisplay.textContent = `${minutos}:${segundos}:${milisegundos}`
+    displayMinutos.innerText = minutos
+    displaySegundos.innerText = segundos
+    displayMilisegundos.innerText = milisegundos
 }
 
 function activarCronometro(){
     if (!cronometroActivado){
-        cronometroCall = setInterval(cronometro, 100)
+        cronometroCall = setInterval(cronometro, 10)
         cronometroActivado = true;
         iniciar.innerHTML = "<i class='fa-solid fa-pause'></i> Pausar"
     }else{
@@ -57,10 +63,13 @@ function activarCronometro(){
 
 function reset(){
     clearInterval(cronometroCall)
-    cronometroDisplay.textContent = `00:00:00`
+    //cronometroDisplay.textContent = `00:00:00`
     cronometroActivado = false;
-    minutos = '00'
-    segundos = '00'
-    milisegundos = '00'
+    displayMinutos.innerText = "00"
+    displaySegundos.innerText = "00"
+    displayMilisegundos.innerText = "00"
+    segundos = "00"
+    minutos = "00"
+    milisegundos = "00"
     iniciar.innerHTML = "<i class='fa-solid fa-play'></i> Iniciar"
 }
